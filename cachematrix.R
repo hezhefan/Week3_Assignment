@@ -49,18 +49,18 @@ cacheSolve <- function(x, ...) {
         data <- x$get()
         
         ## calulation part using default function
-        m <- solve(data) %*% data
+        inverse <- solve(data)
         
         ## now, we transferred the calculated m to setInverse
-        x$setInverse(m)
+        x$setInverse(inverse)
         
         ## finally, we return m
-        m
+        inverse
 }
 
 
 ## testing
-## x <- makeCacheMatrix(matrix(1:4, 2, 2))
+## x <- makeCacheMatrix(matrix(5:8, 2, 2))
 ## cacheSolve(x)
 
 
